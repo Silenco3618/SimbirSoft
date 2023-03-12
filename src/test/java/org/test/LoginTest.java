@@ -58,7 +58,6 @@ public class LoginTest {
 // Кейс 1 без Page Object
     void testSuccessBuy() {
         driver.get("https://www.saucedemo.com/");
-        driver.manage().window().maximize();
         driver.findElement(By.xpath("//*[@id='user-name']")).sendKeys("standard_user");
         driver.findElement(By.xpath("//*[@data-test='password']")).sendKeys("secret_sauce");
         driver.findElement(By.cssSelector("[data-test='login-button']")).click();
@@ -87,5 +86,4 @@ public class LoginTest {
         String actual = driver.findElement(By.cssSelector("[data-test='error']")).getText().trim();
         assertEquals(expected, actual);
     }
-
 }
